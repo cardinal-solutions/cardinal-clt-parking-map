@@ -1,0 +1,146 @@
+@import "includes/variables";
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  padding: 0;
+  margin: 0 auto;
+  color: $baseColor;
+}
+
+a {
+  color: $accentColor;
+  transition: all 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: $highlightColor;
+}
+
+.header {
+  width: 100%;
+  height: 25%;
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.header > h1 {
+  padding: 0;
+  margin: 0 auto 15px;
+  font-size: 5vw;
+  color: #192a53;
+}
+
+.main {
+  width: 100%;
+  height: 70%;
+  z-index: 1;
+}
+
+#map {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+#map > iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.footer {
+  width: 100%;
+  height: 5%;
+  padding: 10px;
+  background: #fff;
+  font-size: 11px;
+  z-index: 2;
+}
+
+.footer-info {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.footer-info > div {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.footer-info-address {
+  left: 0;
+}
+
+.footer-info-address > address {
+  cursor: pointer;
+}
+
+.footer-info-address > address:after {
+  text-decoration: underline;
+  margin-left: 2px;
+  color: $accentColor;
+  transition: all 0.3s ease;
+}
+
+.footer-info-address > address:hover:after,
+.footer-info-address > address:focus:after {
+  color: $highlightColor;
+}
+
+.footer-info-phone {
+  right: 0;
+}
+
+@media (min-width: 400px) {
+  .header {
+    height: 15%;
+  }
+
+  .main {
+    height: 80%;
+  }
+}
+
+@media (min-width: 640px) {
+  .header {
+    height: auto;
+  }
+
+  .footer-info-address > address:after {
+    content: "(Tap to re-center)";
+  }
+}
+
+@media (min-width: 960px) {
+  .footer-info-address > address:after {
+    content: "(Tap to re-center map)";
+  }
+}
